@@ -19,6 +19,6 @@ ans += (n - (n / 4)) * 365;
 #CSP-S2020 T2 动物园
 ### [洛谷传送门](https://www.luogu.com.cn/problem/P7076)
 ___
-###
+####
 
 
