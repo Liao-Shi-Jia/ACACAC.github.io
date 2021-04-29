@@ -35,7 +35,7 @@ int day[Geli], month[Geli], year[Geli]
     month[i] : 格里高利历 400 年月数
     year[i] : 格里高利历 400 年年数
 */
-ll r, t;
+ll n, t;
 
 IL int check(int y, int m)
 {
@@ -75,11 +75,20 @@ int main()
         }
     }
     while(T --) {
-        scanf("%lld", &r);
+        scanf("%lld", &n);
         if (n > 2299160) { // 是格里高利历
-            
-        } 
-            
+            n -= 2159351;
+            t = n / Geli * 400 + 1200;
+            n %= Geli;
+        } else {
+            n = n / Rulian * 4 - 4712;
+            n %= Rulian;
+        }
+        if (t + year[n] > 0) {
+            printf("%d %d %lld", day[n], month[n], t + year[n]);
+        } else {
+            printf("%d %d %lld BC", day[n], month[n], 1 - t - year[n]);
+        }
     }
     return 0;
 }
